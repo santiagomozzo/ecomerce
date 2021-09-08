@@ -44,8 +44,13 @@ var getJSONData = function(url){
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function(e){
+mostrarUsuario()
 
-  
-  
-  
 });
+
+function mostrarUsuario () {
+  const usuario = document.getElementById("mostrarUsuario");
+  usuario.textContent = "Usuario: ";
+  const infoUsuario = localStorage.getItem("usuario")
+  usuario.innerHTML +=`<tr><td>${infoUsuario}</td></tr>`;
+}
