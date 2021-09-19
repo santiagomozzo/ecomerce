@@ -4,24 +4,20 @@
 
 
 const showList = (product) => {
-    const list = document.createElement("list"); // Contenedor de toda la lista
+    const list = document.getElementById("list"); // Contenedor de toda la lista
     for (let prod of product) {
         const lis = document.createElement("lis");
         prod.product = [];
-        list.innerHTML += `<tr><td>${prod.name}</td><br>
+        list.innerHTML += `<br><br><tr><td><a href="product-info.html">${prod.name}</a></td></tr><br>
       <td>${prod.description}</td><br>
-      <td>${prod.cost}</td><br>
-      <td>${prod.currency}</td><br>
-      <td>${prod.imgSrc}</td><br>
-      <td>${prod.soldCount}</td>
+      <tr><td>${prod.cost}</td></tr><br>
+      <tr><td>${prod.currency}</td></tr><br>
+      <tr><td>${prod.imgSrc}</td></tr><br>
+      <tr><td>${prod.soldCount}</td>
       </tr>`;
 
-        const li = document.createElement("li");
-
-        lis.appendChild(li);
-        list.appendChild(lis); // Se añade el item de product a la lista general
+      list.appendChild(lis);
     }
-    document.body.appendChild(list); // Se muestra en pantalla la lista total
 };
 
 
