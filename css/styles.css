@@ -143,3 +143,16 @@ a.custom-card:hover {
 #mostrarUsuario{
   color:white;
 }
+
+#listComment {
+  text-align: center;
+  border-style: solid;
+}
+
+#cajaComment{
+  text-align: center;
+}
+
+#listProductInfo{
+  text-align: center;
+}
