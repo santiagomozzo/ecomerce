@@ -23,15 +23,50 @@
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
       <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
+      <a class="py-2 d-none d-md-inline-block">
+        <p id="mostrarUsuario"></p>
+      </a>
     </div>
   </nav>
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 3 (Fecha de entrega: 19/09/2021) y Entrega 4 (Fecha de entrega: 03/10/2021).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+  <div id="listProductInfo">
+    <h1 id="productName"></h1>
+    <p id="productDescription"></p>
+    <p id="productCost"></p>
+    <p id="productCurrency"></p>
+    <p id="productSoldCount"></p>
+    <p id="productCategory"></p>
+    <div class="row text-center text-lg-left pt-2" id="productImg">
+
     </div>
+  </div>
+  <div id="cajaComment">
+    <br>
+    <textarea name="comentarios" id="comentarios" cols="40" rows="2"></textarea>
+    <input type="submit" value="Comentar" id="btnComentar">
+    <br>
+    <label>Puntuación</label>
+    <select name="puntuacion" id="puntuacion">
+      <option value=""></option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+    </select>
+    <br>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star "></span>
+    <span class="fa fa-star "></span>
+  </div>
+  <br>
+  <div id="listComment">
+
+    <p id="commentScore"></p>
+    <p id="commentDescription"></p>
+    <p id="commentUser"></p>
+    <p id="commentDataTime"></p>
   </div>
   <footer class="text-muted">
     <div class="container">
