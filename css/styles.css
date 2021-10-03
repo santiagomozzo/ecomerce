@@ -144,15 +144,20 @@ a.custom-card:hover {
   color:white;
 }
 
-#listComment {
-  text-align: center;
-  border-style: solid;
-}
 
 #cajaComment{
   text-align: center;
+
 }
 
 #listProductInfo{
+  text-align: center;
+}
+
+#list{
+  text-align: center;
+}
+
+#related{
   text-align: center;
 }
