@@ -2,22 +2,34 @@
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
 
-
+//funcion que muestra lista de productos
 const showList = (product) => {
-    const list = document.getElementById("list"); // Contenedor de toda la lista
+    let htmlContentToAppend = "";
     for (let prod of product) {
-        const lis = document.createElement("lis");
         prod.product = [];
-        list.innerHTML += `<br><br><tr><td><a href="product-info.html">${prod.name}</a></td></tr><br>
-      <td>${prod.description}</td><br>
-      <tr><td>${prod.cost}</td></tr><br>
-      <tr><td>${prod.currency}</td></tr><br>
-      <tr><td>${prod.imgSrc}</td></tr><br>
-      <tr><td>${prod.soldCount}</td>
-      </tr>`;
 
-      list.appendChild(lis);
+        htmlContentToAppend += `
+        <a href="product-info.html" class="list-group-item list-group-item-action">
+            <div class="row">
+                <div class="col-3">
+                    <img src="` + prod.imgSrc + `" alt="` + prod.description + `" class="img-thumbnail">
+                </div>
+                <div class="col">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h4 class="mb-1">`+ prod.name +`</h4>
+                        <small class="text-muted">` + prod.soldCount + ` Relevancia </small>
+                    </div>
+                    <p class="mb-1">` + prod.description + `</p>
+                    <p>` + prod.cost + "  " + prod.currency + `</p>
+                </div>
+            </div>
+        </a>
+        `
+       
+      
+
     }
+    document.getElementById("list").innerHTML = htmlContentToAppend;
 };
 
 
