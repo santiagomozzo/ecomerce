@@ -22,9 +22,12 @@
       <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-      <div class="dropdown"> 
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="menuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-         <a class="py-2 d-none d-md-inline-block"><p id="mostrarUsuario"></p></a> 
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="menuButton" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          <a class="py-2 d-none d-md-inline-block">
+            <p id="mostrarUsuario"></p>
+          </a>
         </button>
         <div class="dropdown-menu" aria-labelledby="menuButton">
           <a class="dropdown-item" href="cart.html">Mi Carrito</a>
@@ -36,52 +39,83 @@
   </nav>
   <div>
     <br>
-    <label id="precio" for="precio">Precio
-      <input type="number" name="precioMax" id="max" placeholder="MAX"> USD
-      <input type="number" name="precioMin" id="min" placeholder="MIN"> USD
-      <input type="submit" value="Filtrar" id="filtrar">
-    </label>
-    <br>
-    <select name="ordenar" id="orden">
-      <option> </option>
-      <option>Precio</option>
-    </select>
-    <input type="radio" name="orden" value="1" id="max-min">
-    <label>Orden Max-Min</label>
-    <input type="radio" name="orden" id="min-max">
-    <label>Orden Min-Max</label>
-    <br>
-    <select name="Relevancia" id="releva">
-      <option> </option>
-      <option>Relevancia</option>
-    </select>
-    <input type="radio" name="releva" value="1" id="releva-min">
-    <label>Relevancia Max-Min</label>
-    <br><br><br>
-    <div id="list">
+    <div class="row justify-content-end">
+      <div class="col-md-5"></div>
+      <div class="col-md-6 col-sm-12 mb-1 container">
+        <div class="row container p-0 m-0">
+          <div class="col">
+            <p class="font-weight-normal text-right my-2">Precio</p>
+          </div>
+          <div class="col">
+            <input class="form-control" type="number" placeholder="min." id="min">
+          </div>
+          <div class="col">
+            <input class="form-control" type="number" placeholder="máx." id="max">
+          </div>
+          <div class="col-3 p-0">
+            <div class="btn-group" role="group">
+              <input type="button" value="Filtrar" class="btn btn-light" id="filtrar">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="row justify-content-end">
+    <div class="col-md-6"></div>
+    <div class="col-md-6 col-sm-12 mb-1 container">
+      <div class="row container p-0 m-0">
+        <div class="col">
+            <select class="form-control" name=" ordenar" id="orden">
+              <option> </option>
+              <option>Precio</option>
+            </select>
+            <input type="radio" name="orden" value="1" id="max-min">
+            <label>Orden Max-Min</label>
+            <input type="radio" name="orden" id="min-max">
+            <label>Orden Min-Max</label>
+            <br><br>
+            <select class="form-control" name="Relevancia" id="releva">
+              <option> </option>
+              <option>Relevancia</option>
+            </select>
+            <input type="radio" name="releva" value="1" id="releva-min">
+            <label>Relevancia Max-Min</label>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <br><br><br>
+  <div class="album py-5 bg-light">
+    <div class="container">
+      <div id="list" class="row">
 
-    </div>
-    <footer class="text-muted bg-light">
-      <div class="container">
-        <p class="float-right">
-          <a href="#">Volver arriba</a>
-        </p>
-        <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
-        <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
-      </div>
-    </footer>
-    <div id="spinner-wrapper">
-      <div class="lds-ring">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
       </div>
     </div>
-    <script src="js/jquery-3.4.1.min.js"></script>
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/init.js"></script>
-    <script src="js/products.js"></script>
+  </div>
+  <footer class="text-muted bg-light">
+    <div class="container">
+      <p class="float-right">
+        <a href="#">Volver arriba</a>
+      </p>
+      <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
+      <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
+    </div>
+  </footer>
+  <div id="spinner-wrapper">
+    <div class="lds-ring">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/init.js"></script>
+  <script src="js/products.js"></script>
 </body>
 
 </html>
