@@ -60,6 +60,7 @@ function mostrarUsuario() {
 function cerrarSesion() {
   if (localStorage.getItem("usuario")) {
     localStorage.removeItem("usuario");
+    localStorage.removeItem("infoPerfil");
     window.location.href = "login.html";
   }
 };

@@ -9,24 +9,16 @@ const showList = (product) => {
         prod.product = [];
 
         htmlContentToAppend += `
-        <a href="product-info.html" class="list-group-item list-group-item-action">
-            <div class="row">
-                <div class="col-3">
-                    <img src="` + prod.imgSrc + `" alt="` + prod.description + `" class="img-thumbnail">
-                </div>
-                <div class="col">
-                    <div class="d-flex w-100 justify-content-between">
-                        <h4 class="mb-1">`+ prod.name +`</h4>
-                        <small class="text-muted">` + prod.soldCount + ` Relevancia </small>
-                    </div>
-                    <p class="mb-1">` + prod.description + `</p>
-                    <p>` + prod.cost + "  " + prod.currency + `</p>
-                </div>
-            </div>
-        </a>
+                  <div class="col-sm-6">
+                      <a href="product-info.html" class="card mb-4 shadow-sm custom-card">
+                          <img src="` + prod.imgSrc + `" alt="` + prod.description + `" class="bd-placeholder-img card-img-top">
+                          <h4 class="mb-1">`+ prod.name + `</h4>
+                          <small class="text-muted">` + prod.soldCount + ` Relevancia </small>
+                          <p class="card-text">` + prod.description + `</p>
+                          <p>` + prod.cost + "  " + prod.currency + `</p>
+                      </a>
+                  </div>     
         `
-       
-      
 
     }
     document.getElementById("list").innerHTML = htmlContentToAppend;
@@ -124,23 +116,24 @@ document.addEventListener("DOMContentLoaded", async function (e) {
         }
     });
 
+    document.getElementById("filtrar").addEventListener("click", function(){
+        minCount = document.getElementById("min").value;
+        maxCount = document.getElementById("max").value;
 
-
-    //Rango de precios
-    document.getElementById("filtrar").addEventListener("click", function () {
-        const costMax = document.getElementById("max");
-        const costMin = document.getElementById("min");
-        const max = costMax.value;
-        const min = costMin.value;
-        const resultado = product.filter(showList(cost));
-
-        if (max != undefined && min != undefined) {
-            return resultado;
-        } else {
-            if (max === undefined || min === undefined) {
-                return alert("Rellene los campos vacios!!");
-            }
+        if ((minCount != undefined) && (minCount != "") && (parseInt(minCount)) >= 0){
+            minCount = parseInt(minCount);
         }
-    });
+        else{
+            minCount = undefined;
+        }
 
+        if ((maxCount != undefined) && (maxCount != "") && (parseInt(maxCount)) >= 0){
+            maxCount = parseInt(maxCount);
+        }
+        else{
+            maxCount = undefined;
+        }
+
+        showList();
+    });
 });

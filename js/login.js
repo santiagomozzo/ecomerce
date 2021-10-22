@@ -8,16 +8,16 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
 
 const buttonSign = () => {
-    const txtemail = document.getElementById("email");
+    const txtuser = document.getElementById("user");
     const txtcontraseña = document.getElementById("contraseña");
-    const email = txtemail.value;
+    const user = txtuser.value;
     const contraseña = txtcontraseña.value;
-    if (email && contraseña) {
-        txtemail.value = "";
+    if (user && contraseña) {
+        txtuser.value = "";
         txtcontraseña.value = "";
 
         localStorage.clear();
-        localStorage.setItem("usuario", email);
+        localStorage.setItem("usuario", user);
     
         window.location.href = "index.html"
     } else {
