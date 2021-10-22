@@ -39,16 +39,27 @@
 </head>
 
 <body class="text-center">
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <div class="signin" id="signin">
+  <div class="container p-5 bg-info">
+    <div class="card-body" role="alert" style="position: relative; width:auto; top: 0;">
+      <div class="signin container bg-light" id="signin">
         <img src="img/login.png" alt="" width="250" height="150">
         <h4 class="alert-heading">Iniciar Sesión</h4>
-        <input type="text" name="email" placeholder="Correo electrónico" required id="email"><br />
-        <input type="password" name="Contraseña" placeholder="Contraseña" required id="contraseña"><br />
-        <input type="checkbox" name="recordar">Recuerdame <br />
-        <br />
-        <input type="button" value="Iniciar Sesión" id="btnSign">
+        <div class="input-group form-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"></span>
+          </div>
+          <input type="text" class="form-control" name="user" placeholder="Usuario" required id="user">
+        </div>
+        <div class="input-group form-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"></i></span>
+          </div>
+          <input type="password" class="form-control" name="Contraseña" placeholder="Contraseña" required
+            id="contraseña">
+        </div>
+        <input type="checkbox" name="recordar">Recuerdame
+        <br><br>
+        <input class="btn btn-primary" type="button" value="Iniciar Sesión" id="btnSign">
       </div>
     </div>
   </div>
