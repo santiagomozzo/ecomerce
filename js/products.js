@@ -116,24 +116,25 @@ document.addEventListener("DOMContentLoaded", async function (e) {
         }
     });
 
-    document.getElementById("filtrar").addEventListener("click", function(){
-        minCount = document.getElementById("min").value;
-        maxCount = document.getElementById("max").value;
+    //funcion que ofiltra por rango de precio
+    document.getElementById("filtrar").addEventListener("click", function () {
+        minCost = document.getElementById("min").value;
+        maxCost = document.getElementById("max").value;
 
-        if ((minCount != undefined) && (minCount != "") && (parseInt(minCount)) >= 0){
-            minCount = parseInt(minCount);
+        if ((minCost != undefined) && (minCost != "") && (parseInt(minCost)) >= 0) {
+            minCost = parseInt(minCost);
         }
-        else{
-            minCount = undefined;
-        }
-
-        if ((maxCount != undefined) && (maxCount != "") && (parseInt(maxCount)) >= 0){
-            maxCount = parseInt(maxCount);
-        }
-        else{
-            maxCount = undefined;
+        else {
+            minCost = undefined;
         }
 
-        showList();
+        if ((maxCost != undefined) && (maxCost != "") && (parseInt(maxCost)) >= 0) {
+            maxCost = parseInt(maxCost);
+        }
+        else {
+            maxCost = undefined;
+        }
+
+        showList(product)
     });
 });
