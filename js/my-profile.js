@@ -25,7 +25,6 @@ const botonGuardar = () => {
   });
 
   localStorage.setItem("infoPerfil", JSON.stringify(obj));
-  console.log(obj);
 }
 
 
