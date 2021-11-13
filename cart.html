@@ -81,19 +81,68 @@
   </div>
   <br><br>
   <div class="container bg-light">
-    <form id="formEnvioYPago" action="envioYPago">
+    <h3 class="text-center">Forma de Pago</h3>
+    <button id="formaPago" type="button" class="btn btn-primary form-control" data-toggle="modal"
+      data-target="#staticBackdrop">Elige tu Método de Pago</button>
+    <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1"
+      aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">Forma de Pago</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <label for="pago">Forma de Pago</label>
+            <select class="form-control" name="pago" id="formaPago" required>
+              <option value=""></option>
+              <option value="Tarjeta">Tarjeta de Crédito</option>
+              <option value="Transferencia">Transferencia Bancaria</option>
+            </select>
+            <br>
+            <label for="datos">Datos de Pago</label>
+            <br>
+            <input class="form-control" type="number" name="datos" id="numeroCuenta" placeholder="N° Tarjeta/ Cuenta"
+              required>
+            <br>
+            <input class="form-control" type="number" name="datos" id="codigoSeg" placeholder="CVV" required>
+            <br>
+            <label>Vencimiento</label>
+            <input class="form-control" type="date" name="datos" id="vencimiento" required>
+            <br>
+            <input class="form-control" type="text" name="datos" id="titular" placeholder="Nombre completo Titular"
+              size="58" required>
+            <br>
+            <input class="form-control" type="text" name="datos" id="direccionPago" placeholder="Dirección" size="58"
+              required>
+            <br>
+            <input class="form-control" type="text" name="datos" id="ciudadPago" placeholder="Ciudad" size="32"
+              required>
+            <br>
+            <input class="form-control" type="number" name="datos" id="postalPago" placeholder="Codigo Postal" required>
+          </div>
+          <div class="modal-footer">
+            <input id="btnGuardar" type="button" class="btn btn-success" data-dismiss="modal" value="Guardar">
+          </div>
+        </div>
+      </div>
+    </div>
+    <br><br><br>
+    <form id="formEnvioYPago">
       <div id="envio">
         <h3 class="text-center">Método de Envío</h3>
         <br>
         <label for="nombreCompleto">Datos Personales</label>
         <br>
-        <input class="form-control" type="text" name="nombreCompleto" id="name" placeholder="Nombre" size="25" required>
+        <input class="form-control" type="text" name="nombreCompleto" id="name" placeholder="Nombre" size="25">
         <br>
         <input class="form-control" type="text" name="nombreCompleto" id="lastname" placeholder="Apellidos" size="25">
         <br>
         <label for="Direccion">Dirección</label>
         <br>
-        <input class="form-control" type="text" name="Direccion" id="calle" placeholder="Calle" size="56" required>
+        <input class="form-control" type="text" name="Direccion" id="calle" placeholder="Calle" size="56" >
         <br>
         <input class="form-control" type="number" name="Direccion" id="numero" placeholder="N° puerta">
         <br>
@@ -101,19 +150,20 @@
         <br>
         <input class="form-control" type="number" name="Direccion" id="postal" placeholder="Codigo Postal">
         <br>
-        <input class="form-control" type="text" name="Direccion" id="provincia" placeholder="Provincia/ Departamento" size="30">
+        <input class="form-control" type="text" name="Direccion" id="provincia" placeholder="Provincia/ Departamento"
+          size="30">
         <br>
         <label for="Pais">Pais</label>
         <select class="form-control" name="Pais" id="pais">
           <option value=""></option>
-          <option value="">Argentina</option>
-          <option value="">Brasil</option>
-          <option value="">Uruguay</option>
+          <option value="Argentina">Argentina</option>
+          <option value="Brasil">Brasil</option>
+          <option value="Uruguay">Uruguay</option>
         </select>
         <br><br>
         <label for="tipoEnvio">Tipo De Envío</label>
         <br>
-        <input type="radio" name="tipoEnvio" id="premium" value="0.15" required>
+        <input type="radio" name="tipoEnvio" id="premium" value="0.15">
         <label>Premium (2-5 días)</label>
         <br>
         <input type="radio" name="tipoEnvio" id="express" value="0.07">
@@ -122,43 +172,19 @@
         <input type="radio" name="tipoEnvio" id="standard" value="0.05">
         <label>Standard (12-15 días)</label>
       </div>
-      <br><br>
-      <div id="pago">
-        <h3 class="text-center">Forma de Pago</h3>
-        <br>
-        <label for="pago">Forma de Pago</label>
-        <select class="form-control" name="pago" id="formaPago">
-          <option value=""></option>
-          <option value="">Tarjeta de Crédito</option>
-          <option value="">Transferencia Bancaria</option>
-        </select>
-        <br>
-        <label for="datos">Datos de Pago</label>
-        <br>
-        <input class="form-control" type="number" name="datos" id="numeroCuenta" placeholder="N° Tarjeta/ Cuenta" required>
-        <br>
-        <input class="form-control" type="number" name="datos" id="codigoSeg" placeholder="CVV" required>
-        <br>
-        <label>Vencimiento</label>
-        <input class="form-control" type="date" name="datos" id="vencimiento" required>
-        <br>
-        <input class="form-control" type="text" name="datos" id="titular" placeholder="Nombre completo Titular" size="58" required>
-        <br>
-        <input class="form-control" type="text" name="datos" id="direccionPago" placeholder="Dirección" size="58" required>
-        <br>
-        <input class="form-control" type="text" name="datos" id="ciudadPago" placeholder="Ciudad" size="32">
-        <br>
-        <input class="form-control" type="number" name="datos" id="postalPago" placeholder="Codigo Postal">
-        <br><br>
-        <div class="card text-center">
-          <p id="sub">Subtotal: $</p>
-          <p id="costoEnvio">Costo de Envio: $</p>
-          <p id="tot">Total: $</p>
-        </div>
-        <br>
-        <input class="btn-success form-control" type="submit" name="envioYPago" id="comprar" value="Comprar">
-      </div>
+      <input class="btn-success form-control" type="submit" name="envioYPago" id="save" value="Guardar">
     </form>
+    <br><br>
+    <div>
+      <div class="card text-center">
+        <p id="sub">Subtotal: $</p>
+        <p id="costoEnvio">Costo de Envio: $</p>
+        <p id="tot">Total: $</p>
+      </div>
+      <br>
+      <input class="btn-success form-control" type="submit" id="comprar" value="Comprar">
+    </div>
+
   </div>
   <br><br><br>
   <div id="spinner-wrapper">
